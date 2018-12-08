@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100"
+    android:padding="0dp"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Input-->
+    <LinearLayout
+        android:background="@drawable/background1"
+        android:layout_weight="30"
+        android:weightSum="100"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <!--Button-->
+        <LinearLayout
+            android:layout_weight="3"
+            android:weightSum="100"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="0dp">
+
+            <!--Button 1-->
+            <LinearLayout
+                android:layout_weight="50"
+                android:weightSum="100"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="0dp">
+
+                <Button
+                    android:id="@+id/btnHome"
+                    android:background="@drawable/homebutton"
+                    android:textSize="@dimen/textSizeButtonText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+            <!--Button 2-->
+            <LinearLayout
+                android:layout_weight="50"
+                android:weightSum="100"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="0dp">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:background="@drawable/goback"
+                    android:textSize="@dimen/textSizeButtonText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Filter Listview-->
+        <LinearLayout
+            android:layout_weight="52"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/background1"
+            android:padding="0dp">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:weightSum="100"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvFilter3"
+                        android:textSize="@dimen/textSizeFilter"
+                        android:layout_width= "match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Filter"
+                        android:paddingLeft="5dp"
+                        android:textStyle="bold"/>
+
+                    <ListView
+                        android:id="@+id/lvFilter3"
+                        android:divider="@null"
+                        android:paddingBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvFilter4"
+                        android:textSize="@dimen/textSizeFilter"
+                        android:layout_width= "match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Filter"
+                        android:paddingLeft="5dp"
+                        android:textStyle="bold"/>
+
+                    <ListView
+                        android:id="@+id/lvFilter4"
+                        android:divider="@null"
+                        android:paddingBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvFilter5"
+                        android:textSize="@dimen/textSizeFilter"
+                        android:layout_width= "match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Filter"
+                        android:paddingLeft="5dp"
+                        android:textStyle="bold"/>
+
+                    <ListView
+                        android:id="@+id/lvFilter5"
+                        android:divider="@null"
+                        android:paddingBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:padding="0dp">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvFilter7"
+                        android:textSize="@dimen/textSizeFilter"
+                        android:layout_width= "match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Filter"
+                        android:paddingLeft="5dp"
+                        android:textStyle="bold"/>
+
+                    <ListView
+                        android:id="@+id/lvFilter7"
+                        android:divider="@null"
+                        android:paddingBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvFilter8"
+                        android:textSize="@dimen/textSizeFilter"
+                        android:layout_width= "match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Filter"
+                        android:paddingLeft="5dp"
+                        android:textStyle="bold"/>
+
+                    <ListView
+                        android:id="@+id/lvFilter8"
+                        android:divider="@null"
+                        android:paddingBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvFilter9"
+                        android:textSize="@dimen/textSizeFilter"
+                        android:layout_width= "match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Filter"
+                        android:paddingLeft="5dp"
+                        android:textStyle="bold"/>
+
+                    <ListView
+                        android:id="@+id/lvFilter9"
+                        android:divider="@null"
+                        android:paddingBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="5dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--image-->
+        <LinearLayout
+            android:layout_weight="45"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rcvFilter6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Output Group-->
+    <LinearLayout
+        android:background="@drawable/background1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:weightSum="100">
+
+        <!--&lt;!&ndash;Button&ndash;&gt;-->
+        <!--<LinearLayout-->
+            <!--android:layout_weight="4"-->
+            <!--android:weightSum="100"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical"-->
+            <!--android:padding="0dp">-->
+
+            <!--&lt;!&ndash;Button Register&ndash;&gt;-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="30">-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btnRegister"-->
+                    <!--android:background="@drawable/registerbutton"-->
+                    <!--android:textSize="@dimen/textSizeButtonText"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent" />-->
+
+            <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
+
+        <!--Output-->
+        <LinearLayout
+            android:layout_weight="96"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rcvOutput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

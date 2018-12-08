@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">FTA</string>
+    <string name="FileName">FTA/FTA.xlsx</string>
+    <string name="Resource_1">FTA/image_1</string>
+    <string name="Resource_2">FTA/image_2</string>
+</resources>
