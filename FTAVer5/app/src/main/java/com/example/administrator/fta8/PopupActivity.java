@@ -1,10 +1,13 @@
 package com.example.administrator.fta8;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +20,7 @@ public class PopupActivity extends AppCompatActivity {
 
     TextView tvJPopup;
     PhotoView imageJPopup;
+    Button btnPopup;
 
     private String tvPopupValue;
     private String ImgPopupValue;
@@ -41,20 +45,28 @@ public class PopupActivity extends AppCompatActivity {
         tvPopupValue = intent.getStringExtra("Text");
         ImgPopupValue = intent.getStringExtra("image");
         op = intent.getIntExtra("op",0);
-
         tvJPopup.setText(tvPopupValue);
-
         String pathfile = "";
         switch (op){
             case 1:
-                pathfile = getString(R.string.Resource_1);
+                pathfile = getString(R.string.RootFolder) + "/" +  ((GlobalValue) this.getApplication()).getProcess() +  "/" + getString(R.string.Resource_1);
                 break;
             case 2:
-                pathfile = getString(R.string.Resource_2);
+                pathfile = getString(R.string.RootFolder) + "/" +  ((GlobalValue) this.getApplication()).getProcess() +  "/" + getString(R.string.Resource_2);
                 break;
         }
 
         Picasso.get().load(new File(Environment.getExternalStorageDirectory().getPath() +"/" +
                 pathfile + "/" + ImgPopupValue + ".jpg")).into(this.imageJPopup);
+
+        btnPopup = findViewById(R.id.btnPopup);
+        btnPopup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenMain= new Intent(PopupActivity.this, MainActivity.class);
+                startActivity(intenMain);
+
+            }
+        });
     }
 }

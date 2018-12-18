@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">FTA</string>
-    <string name="FileName">FTA/FTA.xlsx</string>
-    <string name="Resource_1">FTA/image_1</string>
-    <string name="Resource_2">FTA/image_2</string>
+    <string name="RootFolder">FTA</string>
+    <string name="FileName">FTA.xlsm</string>
+    <string name="Resource_1">Images_1</string>
+    <string name="Resource_2">Images_2</string>
 </resources>

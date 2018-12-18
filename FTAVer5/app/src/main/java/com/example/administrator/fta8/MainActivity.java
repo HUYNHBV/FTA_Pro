@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Environment;
+import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity  implements ClickListener{
     ArrayList<filter6Item> arrayListFilter6 = new ArrayList<>();
     ArrayList<stackItem> stack = new ArrayList<>();
 
+    public static final int REQUEST_CODE = 1412;
 
     String [][] arrLvFilter1;  // Stt
     String [][] arrLvFilter2; // Date
@@ -94,25 +96,32 @@ public class MainActivity extends AppCompatActivity  implements ClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-
         checkFilePermissions();
-
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-
+//        ((GlobalValue) this.getApplication()).setProcess("ASSY");
+        open();
         initial();
 
     }
 
-////////////////////////////////////////////////// My Function Start ////////////////////////////////////////////////////////////////
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK){
+            ((GlobalValue) this.getApplication()).setProcess(data.getStringExtra("Return"));
+        }
+    }
 
+    ////////////////////////////////////////////////// My Function Start ////////////////////////////////////////////////////////////////
+
+    private void open(){
+        Intent intent = new Intent(this, intentAppOpent.class);
+        startActivityForResult(intent,REQUEST_CODE);
+    }
     // Initial Value
     private void initial() {
-        xlsxFile =  getString(R.string.FileName);
-        imgResource_1 = getString(R.string.Resource_1);
-        imgResource_2 = getString(R.string.Resource_2);
+        xlsxFile =  getString(R.string.RootFolder) + "/" +  ((GlobalValue) this.getApplication()).getProcess() +  "/" + getString(R.string.FileName);
+        imgResource_1 = getString(R.string.RootFolder) + "/" +  ((GlobalValue) this.getApplication()).getProcess() + "/" + getString(R.string.Resource_1);
+        imgResource_2 = getString(R.string.RootFolder) + "/" +  ((GlobalValue) this.getApplication()).getProcess() + "/" + getString(R.string.Resource_2);
 
         indexFilter_1 = 0;
         indexFilter_2 = 1;
@@ -377,7 +386,7 @@ public class MainActivity extends AppCompatActivity  implements ClickListener{
             String[][] arrLvDetail = uniqueSorting(filterFuns(arr,null,null,null,null,null,null,null,null,null,temp,null,null,null,null),indexDetail_14);
 
             outputItem output = new outputItem( "[" + temp[0][1] + "] " + temp[0][0],mergeImg2dto1d(arrImgDescrip),
-                    Environment.getExternalStorageDirectory().getPath() +"/" + imgResource_2,
+                    Environment.getExternalStorageDirectory().getPath() +"/" +  imgResource_2,
                     mergeLv2dto1d(arrLvDescrip),mergeLv2dto1d(arrLvAction),mergeLv2dto1d(arrLvDetail));
 
             arrayListOutput.add(output);
