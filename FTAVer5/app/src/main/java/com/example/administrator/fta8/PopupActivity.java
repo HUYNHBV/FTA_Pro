@@ -49,10 +49,10 @@ public class PopupActivity extends AppCompatActivity {
         String pathfile = "";
         switch (op){
             case 1:
-                pathfile = getString(R.string.RootFolder) + "/" +  ((GlobalValue) this.getApplication()).getProcess() +  "/" + getString(R.string.Resource_1);
+                pathfile = getString(R.string.RootFolder) + "/" +  globalValue2.Process +  "/" + getString(R.string.Resource_1);
                 break;
             case 2:
-                pathfile = getString(R.string.RootFolder) + "/" +  ((GlobalValue) this.getApplication()).getProcess() +  "/" + getString(R.string.Resource_2);
+                pathfile = getString(R.string.RootFolder) + "/" +  globalValue2.Process +  "/" + getString(R.string.Resource_2);
                 break;
         }
 
@@ -63,9 +63,8 @@ public class PopupActivity extends AppCompatActivity {
         btnPopup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intenMain= new Intent(PopupActivity.this, MainActivity.class);
-                startActivity(intenMain);
-
+                //PopupActivity.super.onBackPressed();
+                finish();
             }
         });
     }

@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".intentAppOpent"
-    android:orientation="vertical">
+    android:gravity="center">
 
     <ListView
         android:id="@+id/lvIntentOpen"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_centerInParent = "true">
 
     </ListView>
 

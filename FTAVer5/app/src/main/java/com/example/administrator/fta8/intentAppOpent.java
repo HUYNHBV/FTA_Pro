@@ -1,10 +1,14 @@
 package com.example.administrator.fta8;
 
+import android.Manifest;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Environment;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +22,7 @@ public class intentAppOpent extends AppCompatActivity {
 
     ListView lvJIntenOpen;
     ArrayList<String> processDir;
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,15 +33,16 @@ public class intentAppOpent extends AppCompatActivity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
         getWindow().setLayout((int) (width*0.5), (int) (height*0.5));
+        checkFilePermissions();
 
         lvJIntenOpen = findViewById(R.id.lvIntentOpen);
         lvJIntenOpen.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent();
-                intent.putExtra("Return", processDir.get(position));
-                setResult(RESULT_OK,intent);
-                finish();
+                Intent intent = new Intent(intentAppOpent.this, MainActivity.class);
+//                intent.putExtra("Return", processDir.get(position));
+                globalValue2.Process = processDir.get(position);
+                startActivity(intent);
             }
         });
         getProcessDir();
@@ -58,4 +64,18 @@ public class intentAppOpent extends AppCompatActivity {
         }
     }
 
+    // Check Permission
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private void checkFilePermissions() {
+        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP){
+            int permissionCheck = this.checkSelfPermission("Manifest.permission.READ_EXTERNAL_STORAGE");
+            permissionCheck += this.checkSelfPermission("Manifest.permission.WRITE_EXTERNAL_STORAGE");
+            if (permissionCheck != 0) {
+
+                this.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE}, 1001); //Any number
+            }
+        }else{
+            Log.d("Huynhbv", "checkBTPermissions: No need to check permissions. SDK version < LOLLIPOP.");
+        }
+    }
 }

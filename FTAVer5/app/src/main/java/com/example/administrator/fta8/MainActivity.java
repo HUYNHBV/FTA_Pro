@@ -96,32 +96,21 @@ public class MainActivity extends AppCompatActivity  implements ClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+
+//        Intent intent = getIntent();
+//        globalValue2.Process = intent.getStringExtra("Return");
+//        globalValue2.Process = "ASSY";
         checkFilePermissions();
-//        ((GlobalValue) this.getApplication()).setProcess("ASSY");
-        open();
         initial();
-
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK){
-            ((GlobalValue) this.getApplication()).setProcess(data.getStringExtra("Return"));
-        }
     }
 
     ////////////////////////////////////////////////// My Function Start ////////////////////////////////////////////////////////////////
 
-    private void open(){
-        Intent intent = new Intent(this, intentAppOpent.class);
-        startActivityForResult(intent,REQUEST_CODE);
-    }
     // Initial Value
     private void initial() {
-        xlsxFile =  getString(R.string.RootFolder) + "/" +  ((GlobalValue) this.getApplication()).getProcess() +  "/" + getString(R.string.FileName);
-        imgResource_1 = getString(R.string.RootFolder) + "/" +  ((GlobalValue) this.getApplication()).getProcess() + "/" + getString(R.string.Resource_1);
-        imgResource_2 = getString(R.string.RootFolder) + "/" +  ((GlobalValue) this.getApplication()).getProcess() + "/" + getString(R.string.Resource_2);
+        xlsxFile =  getString(R.string.RootFolder) + "/" +  globalValue2.Process +  "/" + getString(R.string.FileName);
+        imgResource_1 = getString(R.string.RootFolder) + "/" +  globalValue2.Process + "/" + getString(R.string.Resource_1);
+        imgResource_2 = getString(R.string.RootFolder) + "/" +  globalValue2.Process + "/" + getString(R.string.Resource_2);
 
         indexFilter_1 = 0;
         indexFilter_2 = 1;
