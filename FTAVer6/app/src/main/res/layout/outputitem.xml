@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/llparentItem"
+    android:weightSum="100"
+    android:layout_width="@dimen/rcvWidthOutput"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    android:background="@drawable/rcvboder1"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_weight="40"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+        <TextView
+            android:id="@+id/tvCause"
+            android:textColor="#ccff0000"
+            android:textSize="@dimen/textSizeCause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="COUSE 1"
+            android:textStyle="bold"
+            android:background="@android:color/transparent"/>
+
+        <ImageView
+            android:id="@+id/imgDes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/anhabc" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="5dp"
+        android:layout_weight="20"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="@dimen/textSizeDescription"
+            android:layout_height="wrap_content"
+            android:text="Mô tả / 불량 설명"
+            android:textStyle="bold"
+            android:padding="0dp"
+            android:background="@android:color/transparent"/>
+
+        <ListView
+            android:id="@+id/lvDes"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:divider="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="5dp"
+        android:layout_weight="20"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="@dimen/textSizeAction"
+            android:layout_height="wrap_content"
+            android:text="Action"
+            android:textStyle="bold"
+            android:padding="0dp"
+            android:background="@android:color/transparent"/>
+
+        <ListView
+            android:id="@+id/lvAction"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:divider="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="5dp"
+        android:layout_weight="20"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="@dimen/textSizeDetail"
+            android:layout_height="wrap_content"
+            android:text="Chi tiết / 세부"
+            android:textStyle="bold"
+            android:padding="0dp"
+            android:background="@android:color/transparent"/>
+
+        <ListView
+            android:id="@+id/lvDetail"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="5dp"
+            android:divider="@null"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</LinearLayout>

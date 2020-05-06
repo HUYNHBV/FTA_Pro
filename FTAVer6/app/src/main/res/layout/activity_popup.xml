@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:weightSum="100"
+    android:background="@drawable/background"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="40"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnPopup"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/back"/>
+
+        <TextView
+            android:id="@+id/tvPopup"
+            android:text="Test"
+            android:textSize="@dimen/textSizePopupText"
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="60"
+        android:layout_height="match_parent">
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/imgPopup"
+            android:layout_weight="50"
+            android:layout_width="0dp"
+            android:src="@drawable/anhabc"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</LinearLayout>
